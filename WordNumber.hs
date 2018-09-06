@@ -1,7 +1,7 @@
 module WordNumber where
 
 import Control.Exception
-import Data.List (intersperse)
+import Data.List
 
 digitToWord :: Int -> String
 digitToWord 0 = "zero"
@@ -23,12 +23,9 @@ digits n = digits next ++ [digit]
         next  = n `div` 10
 
 wordNumber :: Int -> String
-wordNumber = concat .
-             intersperse "-" .
-             map digitToWord .
-             digits
+wordNumber = intercalate "-" . map digitToWord . digits
 
 main :: IO ()
 main =
-  print $ assert (results == "one-two-three-two-four-five-four-six") $ results
+  print $ assert (results == "one-two-three-two-four-five-four-six") results
   where results = wordNumber 12324546
