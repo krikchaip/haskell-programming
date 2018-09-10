@@ -54,6 +54,11 @@ groupInto (xs:xss) ys =
 
 main :: IO ()
 main = do
-  let encoded   = vigenère "ALLY" "MEET AT DAWN"
-      expected  = "MPPR AE OYWY"
-  putStrLn $ assert (encoded == expected) "pass with \"ALLY\" keyword"
+  -- let encoded   = vigenère "ALLY" "MEET AT DAWN"
+  --     expected  = "MPPR AE OYWY"
+  -- putStrLn $ assert (encoded == expected) "pass with \"ALLY\" keyword"
+  putStr "Please enter a secret keyword: "
+  keyword <- getLine
+  putStr "Enter a message to be encode: "
+  str <- getLine
+  putStrLn $ "Encoded text: " ++ vigenère keyword str
