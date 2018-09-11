@@ -76,4 +76,4 @@ coolestLtr = mostPopularLetter . concat
 
 coolestWord :: [String] -> String
 coolestWord = mostPopularWord . allWords
-  where allWords = concat . map words
+  where allWords = concatMap words
