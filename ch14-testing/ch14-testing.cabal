@@ -1,0 +1,12 @@
+name:             ch14-testing
+version:          0.0.0
+build-type:       Simple
+cabal-version:    >=1.8
+
+executable ch14-testing
+  main-is:              Main.hs
+  hs-source-dirs:       .
+                      , src
+  build-depends:        base
+                      , hspec
+                      , QuickCheck
