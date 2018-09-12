@@ -8,16 +8,16 @@ library
   -- other-modules:        ...
   build-depends:        base
                       , containers
-                      , QuickCheck
+                      -- , QuickCheck
   hs-source-dirs:       lib
   ghc-options:          -Wall -Wtabs
 
-executable morse-exec
+executable morse
   main-is:              Main.hs
   build-depends:        base
                       , morse
-                      , containers
-                      , QuickCheck
+                      -- , containers
+                      -- , QuickCheck
   hs-source-dirs:       src
   ghc-options:          -Wall -Wtabs
 
