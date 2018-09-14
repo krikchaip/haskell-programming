@@ -1,4 +1,4 @@
-module Main where
+module Hangman where
 
 import Control.Monad (forever, when)
 
@@ -6,15 +6,8 @@ import Data.Char (toLower)
 import Data.Maybe (isJust)
 import Data.List (intersperse)
 
-import System.IO
 import System.Exit (exitSuccess)
 import System.Random (randomRIO)
-
-main :: IO ()
-main = do
-  hSetBuffering stdout NoBuffering
-  puzzle <- freshPuzzle . map toLower <$> randomWord
-  runGame puzzle
 
 type WordList = [String]
 
@@ -120,3 +113,4 @@ runGame puzzle = forever $ do
     [c] -> handleGuess puzzle c >>= runGame
     _   -> putStrLn "Your guess must\
                    \ be a single character"
+

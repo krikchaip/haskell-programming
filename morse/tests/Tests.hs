@@ -6,7 +6,7 @@ import qualified Data.Map as M
 import Test.QuickCheck
 
 main :: IO ()
-main = do
+main =
   quickCheck $ withMaxSuccess 500 backAndForthConvert
   where backAndForthConvert :: Property
         backAndForthConvert =

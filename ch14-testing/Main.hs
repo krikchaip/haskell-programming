@@ -3,8 +3,10 @@ module Main where
 import Test.Hspec
 import Test.QuickCheck
 
+import Exercises
 import Generator
 import Arbitrary
+import CoArbitrary
 import Property
 
 dividedBy :: Integral a => a -> a -> (a, a)

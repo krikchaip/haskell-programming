@@ -1,7 +1,7 @@
 module Arbitrary.ADT where
 
 import Test.QuickCheck
-import Test.QuickCheck.Gen (oneof) -- for sum types
+import Test.QuickCheck.Gen (oneof)
 
 import Control.Applicative (liftA2)
 
@@ -40,4 +40,24 @@ genPairIntString :: Gen (Pair Int String)
 genPairIntString = arbitrary
 
 {- Arbitrary Sum type -} ----------------------------------
+data Sum a b = First a | Second b deriving (Eq, Show)
 
+-- or write arbitrary instance...
+-- equal chances for each
+-- (the odds aren't affected by item frequencies)
+genSumEqual :: (Arbitrary a, Arbitrary b) => Gen (Sum a b)
+genSumEqual = do
+  a <- arbitrary
+  b <- arbitrary
+  oneof [return $ First a, return $ Second b]
+
+genSumCharInt :: Gen (Sum Char Int)
+genSumCharInt = genSumEqual
+
+-- 10 times higher probability to our First data constructor
+genSumFirstPls :: (Arbitrary a, Arbitrary b) => Gen (Sum a b)
+genSumFirstPls = frequency [(10, fmap First arbitrary)
+                           ,(1, fmap Second arbitrary)]
+
+genSumCharIntFirst :: Gen (Sum Char Int)
+genSumCharIntFirst = genSumFirstPls
