@@ -8,6 +8,8 @@ executable ch17-applicative
   other-modules:        BadMonoid
                       , ApplicativeInstances
                       , ZipList
+                      , Exercises.Instances
+                      , Exercises.Combinations
   hs-source-dirs:       .
                       , src
   build-depends:        base
