@@ -30,8 +30,8 @@ instance (Arbitrary a, Arbitrary b) => Arbitrary (Sum a b) where
 instance (Eq a, Eq b) => EqProp (Sum a b) where
   (=-=) = eq
 
-test :: IO ()
-test = do
+testSum :: IO ()
+testSum = do
   quickBatch $ functor (undefined :: Sum Int (Int, Int, Int))
   quickBatch $ applicative (undefined :: Sum Int (Int, Int, Int))
   quickBatch $ monad (undefined :: Sum Int (Int, Int, Int))
