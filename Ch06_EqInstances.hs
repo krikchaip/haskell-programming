@@ -1,4 +1,4 @@
-module EqInstances where
+module Ch06_EqInstances where
 
 -- ex01
 data TisAnInteger = TisAn Integer

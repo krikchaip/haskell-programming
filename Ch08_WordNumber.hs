@@ -1,4 +1,4 @@
-module WordNumber where
+module Ch08_WordNumber where
 
 import Control.Exception
 import Data.List

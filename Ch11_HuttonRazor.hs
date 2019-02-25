@@ -1,4 +1,4 @@
-module HuttonRazor where
+module Ch11_HuttonRazor where
 
 data Expr = Lit Integer | Add Expr Expr
 

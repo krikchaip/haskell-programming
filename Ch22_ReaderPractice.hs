@@ -1,4 +1,4 @@
-module ReaderPractice where
+module Ch22_ReaderPractice where
 
 import Control.Applicative
 import Data.Maybe

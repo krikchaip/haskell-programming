@@ -1,4 +1,4 @@
-module Recursion where
+module Ch08_Recursion where
 
 incTimes :: (Eq t, Num t, Num t1) => t -> t1 -> t1
 incTimes 0     n = n

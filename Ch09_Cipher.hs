@@ -1,4 +1,4 @@
-module Cipher where
+module Ch09_Cipher where
 
 import Data.Char
 import Data.Int

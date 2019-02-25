@@ -1,4 +1,4 @@
-module Phone where
+module Ch11_Phone where
 
 import Data.Char
 import Data.Maybe

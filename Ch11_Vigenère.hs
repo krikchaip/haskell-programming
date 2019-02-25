@@ -1,4 +1,4 @@
-module Vigenère where
+module Ch11_Vigenère where
 
 import Data.Char
 import Data.List

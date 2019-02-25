@@ -1,4 +1,4 @@
-module ReplaceExperiment where
+module Ch16_ReplaceExperiment where
 
 lms :: [Maybe [Char]]
 lms = [Just "Ave", Nothing, Just "woohoo"]
