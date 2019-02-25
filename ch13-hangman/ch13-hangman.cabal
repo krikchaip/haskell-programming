@@ -21,7 +21,7 @@ executable hangman
   main-is:             Main.hs
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
-                     , hangman
+                     , ch13-hangman
 
 test-suite hangman-test
   type:                exitcode-stdio-1.0
@@ -30,4 +30,4 @@ test-suite hangman-test
   default-language:    Haskell2010
   build-depends:       base >= 4.7 && < 5
                      , hspec
-                     , hangman
+                     , ch13-hangman

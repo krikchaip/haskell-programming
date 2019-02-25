@@ -1,0 +1,9 @@
+resolver: lts-12.26
+packages:
+  - ./
+  - ch13-hangman
+  - ch14-morse
+  - ch14-testing
+  - ch17-applicative
+  - ch18-monad
+  - ch21-traversable
