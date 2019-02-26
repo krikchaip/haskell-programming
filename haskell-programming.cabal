@@ -85,6 +85,9 @@ library
                      , Ch23_Exercises
                      , Ch23_RollYourOwn
                      , Ch23_StateInstance
+                     , Ch24_Fractions
+                     , Ch24_LearnParsers
+                     , Ch24_ParsingPractice
                      , CompilerFlags
 
   -- Modules included in this library but not exported.
@@ -103,6 +106,8 @@ library
                      , checkers
                      , hspec
                      , random
+                     , trifecta
+                     , raw-strings-qq
 
   -- Directories containing source files.
   hs-source-dirs:      .

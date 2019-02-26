@@ -2,7 +2,7 @@
 
 to run each exercise
 ```bash
-$ stack ghci
+$ stack ghci --no-load
 Prelude> :l path/to/File.hs
 ```
 
