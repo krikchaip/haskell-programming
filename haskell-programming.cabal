@@ -88,6 +88,8 @@ library
                      , Ch24_Fractions
                      , Ch24_Ini
                      , Ch24_LearnParsers
+                     , Ch24_Marshalling
+                     , Ch24_Marshalling2
                      , Ch24_ParsingPractice
                      , CompilerFlags
 
@@ -112,6 +114,8 @@ library
                      , containers
                      , bytestring
                      , text
+                     , aeson
+                     , scientific
 
   -- Directories containing source files.
   hs-source-dirs:      .
