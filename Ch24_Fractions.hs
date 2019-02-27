@@ -25,6 +25,14 @@ virtuousFraction = do
     0 -> fail "Denominator cannot be zero"
     _ -> return (numerator % denominator)
 
+-- exercise: trytry
+type TryTry = Either Integer Rational
+
+trytry :: Parser (Either Integer Rational)
+trytry =
+      (Right <$> try virtuousFraction)
+  <|> (Left  <$> decimal <* eof)
+
 main :: IO ()
 main = do
   let parseFraction' =
@@ -42,3 +50,11 @@ testVirtuous = do
   print $ virtuousFraction' alsoBad
   print $ virtuousFraction' shouldWork
   print $ virtuousFraction' shouldAlsoWork
+
+testTryTry = do
+  let trytry' =
+        parseString trytry mempty
+  print $ trytry' badFraction
+  print $ trytry' alsoBad
+  print $ trytry' shouldWork
+  print $ trytry' shouldAlsoWork
