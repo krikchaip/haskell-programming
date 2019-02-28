@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ccdbfd6ce4a9cb6bcbf4fa6f97fa5d810e964db3a880d40725b4dc417555d483
+-- hash: c459b33cd70de44ee1ac0c9a21c44e6b3c06c713a231889bc6f60e25dfaef69c
 
 name:           ch24-exercises
 version:        0.0.0
@@ -13,7 +13,10 @@ build-type:     Simple
 executable ch24-exercises
   main-is: Main.hs
   other-modules:
+      Base10
       SemVer
+      USCanadaPhone
+      Paths_ch24_exercises
   hs-source-dirs:
       ./.
   build-depends:
