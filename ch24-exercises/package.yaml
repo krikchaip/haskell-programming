@@ -1,0 +1,10 @@
+dependencies:
+  - base
+  - trifecta
+
+executable:
+  main: Main.hs
+  source-dirs:
+    - .
+  other-modules:
+    - SemVer
