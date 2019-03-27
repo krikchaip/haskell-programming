@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c459b33cd70de44ee1ac0c9a21c44e6b3c06c713a231889bc6f60e25dfaef69c
+-- hash: f5be1883ccfe3ae7530c0fe8e348e651fff018c60e555eb2597f91ecf0f4725c
 
 name:           ch24-exercises
 version:        0.0.0
@@ -14,6 +14,7 @@ executable ch24-exercises
   main-is: Main.hs
   other-modules:
       Base10
+      LogFile
       SemVer
       USCanadaPhone
       Paths_ch24_exercises
@@ -21,5 +22,6 @@ executable ch24-exercises
       ./.
   build-depends:
       base
+    , raw-strings-qq
     , trifecta
   default-language: Haskell2010
