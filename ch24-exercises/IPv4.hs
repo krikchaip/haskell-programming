@@ -4,27 +4,30 @@ import Text.Trifecta
 
 import Data.Word
 import Data.Bits
+import Data.List
 
 data IPv4 =
-  IPv4 Word32 Word32 Word32 Word32
+  IPv4 Word8 Word8 Word8 Word8
   deriving (Eq, Ord, Show)
 
-toDecimal :: IPv4 -> Word32
+newtype IPAddress =
+  IPAddress Word32
+  deriving (Eq, Ord, Show)
+
+toDecimal :: IPv4 -> IPAddress
 toDecimal (IPv4 aaa bbb ccc ddd)
-  = sum [ aaa `shiftL` 24,
-          bbb `shiftL` 16,
-          ccc `shiftL` 8,
-          ddd ]
+  = let shifts = [24, 16, 8, 0]
+        xs = fromIntegral <$> [aaa, bbb, ccc, ddd]
+    in  IPAddress $ head (zipWith shiftL xs shifts)
 
 ipv4 :: Parser IPv4
-ipv4 = do
-  aaa <- octet <* char '.'
-  bbb <- octet <* char '.'
-  ccc <- octet <* char '.'
-  ddd <- octet
-  return $ IPv4 aaa bbb ccc ddd
+ipv4 =
+  IPv4 <$> octet <* char '.'
+       <*> octet <* char '.'
+       <*> octet <* char '.'
+       <*> octet
   where
-    octet :: Parser Word32
+    octet :: Parser Word8
     octet = do
       n <- decimal
       if 0 <= n && n <= 255

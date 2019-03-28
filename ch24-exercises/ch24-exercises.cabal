@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c0b4cb809acf55fc5021fd8258cfcec59ef786b93b4ac9a94bd96afb0d786cb9
+-- hash: 5b2f54b0074137a56901891760fa406c190bb9a73886f6b32b5aef4fdff69ddf
 
 name:           ch24-exercises
 version:        0.0.0
@@ -15,6 +15,7 @@ executable ch24-exercises
   other-modules:
       Base10
       IPv4
+      IPv6
       LogFile
       SemVer
       USCanadaPhone
