@@ -15,7 +15,13 @@ data IPv6 =
 
 data IPAddress6 =
   IPAddress6 Word64 Word64
-  deriving (Eq, Ord, Show)
+  deriving (Eq, Ord)
+
+instance Show IPAddress6 where
+  show (IPAddress6 a b) =
+    let shifts = [48, 32, 16, 0]
+        toHex n = concat $ flip showHex ":" . (.&. 65535) . (n `shiftR`) <$> shifts
+    in toHex a ++ init (toHex b)
 
 toDecimal :: IPv6 -> IPAddress6
 toDecimal (IPv6 aaaa bbbb cccc dddd

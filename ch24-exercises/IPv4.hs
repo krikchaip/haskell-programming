@@ -12,13 +12,18 @@ data IPv4 =
 
 newtype IPAddress =
   IPAddress Word32
-  deriving (Eq, Ord, Show)
+  deriving (Eq, Ord)
+
+instance Show IPAddress where
+  show (IPAddress n) =
+    let shifts = [24, 16, 8, 0]
+    in  intercalate "." $ show . (.&. 255) . (n `shiftR`) <$> shifts
 
 toDecimal :: IPv4 -> IPAddress
 toDecimal (IPv4 aaa bbb ccc ddd)
   = let shifts = [24, 16, 8, 0]
         xs = fromIntegral <$> [aaa, bbb, ccc, ddd]
-    in  IPAddress $ head (zipWith shiftL xs shifts)
+    in  IPAddress $ sum (zipWith shiftL xs shifts)
 
 ipv4 :: Parser IPv4
 ipv4 =
@@ -39,3 +44,6 @@ example1 = "172.16.254.1"
 
 example2 :: String
 example2 = "204.120.0.15"
+
+example3 :: IPv4
+example3 = IPv4 172 16 254 1
