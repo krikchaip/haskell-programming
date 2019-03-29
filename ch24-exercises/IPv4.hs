@@ -2,6 +2,8 @@ module IPv4 where
 
 import Text.Trifecta
 
+import IPv6 (IPAddress6(..), toDecimal, data1)
+
 import Data.Word
 import Data.Bits
 import Data.List
@@ -24,6 +26,14 @@ toDecimal (IPv4 aaa bbb ccc ddd)
   = let shifts = [24, 16, 8, 0]
         xs = fromIntegral <$> [aaa, bbb, ccc, ddd]
     in  IPAddress $ sum (zipWith shiftL xs shifts)
+
+toV6 :: IPAddress -> IPAddress6
+toV6 (IPAddress n) =
+  IPAddress6 0 (fromIntegral n)
+
+fromV6 :: IPAddress6 -> IPAddress
+fromV6 (IPAddress6 _ b) =
+  IPAddress . (.&. (2 ^ 32 - 1)) . fromIntegral $ b
 
 ipv4 :: Parser IPv4
 ipv4 =
