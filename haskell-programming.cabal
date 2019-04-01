@@ -91,6 +91,7 @@ library
                      , Ch24_Marshalling
                      , Ch24_Marshalling2
                      , Ch24_ParsingPractice
+                     , Ch25_Bifunctor
                      , Ch25_ComposeInstances
                      , Ch25_Twinplicative
                      , CompilerFlags
