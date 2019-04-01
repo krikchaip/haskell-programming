@@ -91,6 +91,8 @@ library
                      , Ch24_Marshalling
                      , Ch24_Marshalling2
                      , Ch24_ParsingPractice
+                     , Ch25_ComposeInstances
+                     , Ch25_Twinplicative
                      , CompilerFlags
 
   -- Modules included in this library but not exported.
