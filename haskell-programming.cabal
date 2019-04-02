@@ -94,6 +94,7 @@ library
                      , Ch25_Bifunctor
                      , Ch25_ComposeInstances
                      , Ch25_Twinplicative
+                     , Ch26_EitherT
                      , CompilerFlags
 
   -- Modules included in this library but not exported.
