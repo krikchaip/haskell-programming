@@ -95,6 +95,7 @@ library
                      , Ch25_ComposeInstances
                      , Ch25_Twinplicative
                      , Ch26_EitherT
+                     , Ch26_StateT
                      , CompilerFlags
 
   -- Modules included in this library but not exported.
